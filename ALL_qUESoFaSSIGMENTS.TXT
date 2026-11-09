@@ -1,0 +1,1835 @@
+practice assigment 20 Matrix 
+
+Q1
+1 / 1 pts
+Correct
+Symmetric Matrix Check
+Your Answer
+
+python
+# # Write your reference solution here
+n = int(input())
+i = 0 
+matriwa = []
+while i < n :
+    matu = list(map(int,input().split()))
+    matriwa.append(matu)
+    i += 1
+
+# # print(matriwa) taking the list is complete 
+# # task 2 
+# i = 0 
+
+# while i < n :
+#     j = 0 
+#     sym = False
+#     while j < n :
+#         if matriwa[i][j] == matriwa[j][i] :
+#             sym = True
+#         else :
+#             sym = False
+#             # print("Not Symmetric")
+#             break
+#         j += 1 
+#     i += 1
+# if sym:
+#     print("Symmetric")
+# else :
+#     print("Not Symmetric")
+        
+# above code is done jesse tesse i want to make a more cleanner code how i able to do that 
+
+# lets undertands the logic task one to check only important things lesss loops cycles lesss computing 
+#2. trues false of sym clean 
+
+# 2nd trial of the code 
+
+# i = 0 
+# sym = True
+# while i < n :
+#     j = 0 
+#     while j < n :
+#         if matriwa[i][j] != matriwa[j][i]:
+#             sym = False
+#             break
+#         j += 1
+#     if  not sym:
+#         break
+#     i+=1
+
+# if sym :
+#     print("Symmetric") 
+# else :
+#     print("Not Symmetric")
+
+# it is lot more cleaner but there is more simple less computing way 
+# less checks above the diagonals parts 
+
+i = 0 
+sym = True
+while i < n :
+    # change 
+    j = i + 1 
+    while j < n :
+        if matriwa[i][j] != matriwa[j][i]:
+            sym = False
+            break
+        j += 1
+    if  not sym:
+        break
+    i+=1
+
+if sym :
+    print("Symmetric") 
+else :
+    print("Not Symmetric")
+Q2
+1 / 1 pts
+Correct
+Add Two Matrices
+Your Answer
+
+python
+# # Write your reference solution here
+# R,C = map(int,input().split())
+# n = 2
+# p = 0 
+# mat1= []
+# i = 0
+# while i < R:
+#     mithu = list(map(int,input().split()))
+#     mat1.append(mithu)
+#     i += 1 
+# mat2 = []
+# i = 0
+# while i < R :
+#     mithu = list(map(int,input().split()))
+#     mat2.append(mithu)
+#     i += 1
+# # succesfully take two list 
+# sum_matrix = []
+
+# i = 0 
+# while i < R :
+#     j = 0 
+#     meow = []
+#     while j < C :
+#         nene = mat1[i][j] + mat2[i][j]
+#         meow.append(nene)
+#         j += 1 
+#     sum_matrix.append(meow)
+#     i += 1             
+
+# # print(sum_matrix)
+# # succesfully make the sum matrix now have to print 
+# i = 0 
+# while i < R :
+#     print(*sum_matrix[i])
+#     i += 1 
+
+ 
+# more good solutions 
+
+R,C = map(int,input().split())
+mat1 = []
+for i in range(R):
+    mat1.append(list(map(int,input().split())))
+mat2 = []
+for i in range(R):
+    mat2.append(list(map(int,input().split())))
+# print(mat1)
+# print(mat2)
+for i in range(R):
+    for j in range(C):
+        if j == C - 1 :
+            print(mat1[i][j] + mat2[i][j]) 
+        else :
+            print(mat1[i][j] + mat2[i][j],end = " ")
+        
+Q3
+1 / 1 pts
+Correct
+Count Multiples of K
+Your Answer
+
+python
+# Write your reference solution here
+R,C,K = map(int,input().split())
+mat = []
+for i in range(R):
+        mat.append(list(map(int,input().split())))
+# print(mat)
+# print(K)
+# succefully taken the list 
+
+
+# here the main solutiomn
+# count = 0
+# for i in range(R):
+#     for j in range(C):
+#         if mat[i][j] % K == 0 :
+#             count += 1 
+# print(count) 
+
+
+
+# there is even shorter way to do it 
+count=0
+for i in mat:
+    for j in i:
+        if j % K == 0 :
+            count += 1 
+print(count) 
+            
+Q4
+1 / 1 pts
+Correct
+Sum of Border Elements
+Your Answer
+
+python
+# Write your reference solution here
+R,C = map(int,input().split())
+mat = []
+    
+for i in range(R):
+        mat.append(list(map(int,input().split())))
+# print(mat)
+# list is taken 
+sumOFAll= 0
+if R == 1 or C == 1 :
+    for i in range(R):
+        for j in range(C):
+            sumOFAll += mat[i][j]
+else :
+    for i in range(R):
+        if i == 0 or i == R - 1 :
+            for j in range(C):
+                sumOFAll += mat[i][j]
+        else :
+            sumOFAll += mat[i][0]
+            sumOFAll += mat[i][C-1]
+print(sumOFAll)
+Q5
+1 / 1 pts
+Correct
+Largest Element and Its Position
+Your Answer
+
+python
+# Write your reference solution here
+R,C = map(int,input().split())
+mat = []
+    
+for i in range(R):
+        mat.append(list(map(int,input().split())))
+# succefully taken the matrix
+largest_element = mat[0][0]
+cordi_i = 1
+cordi_j = 1
+for i in range(R):
+    for j in range(C):
+        if mat[i][j] > largest_element :
+            largest_element = mat[i][j]
+            cordi_i = i+1
+            cordi_j = j+1
+
+print(largest_element,cordi_i,cordi_j)
+
+Practice Assignment - Matrix (18)
+Q1
+1 / 1 pts
+Correct
+Matrix TotaL
+Your Answer
+
+python
+# Write your reference solution here
+R, C = map(int, input().split())
+mat = [ ]
+i = 0
+while i < R :
+        row = list(map(int,input().split()))
+        mat.append(row)
+        i += 1
+
+sumu = 0
+row = 0
+while row < R:
+    col = 0 
+    while col < C :
+        sumu += mat[row][col]
+        col += 1
+    row +=1 
+
+print(sumu)
+Q2
+1 / 1 pts
+Correct
+Row Sums and Column Sums
+Your Answer
+
+python
+R, C = map(int, input().split())
+
+mat = []
+
+i = 0
+while i < R:
+    row = list(map(int, input().split()))
+    mat.append(row)
+    i += 1
+
+sun_r = []  # row sums
+sun_c = []  # column sums
+
+# Find row sums
+row = 0
+while row < R:
+    col = 0
+    total = 0
+
+    while col < C:
+        total += mat[row][col]
+        col += 1
+
+    sun_r.append(total)
+    row += 1
+
+# Find column sums
+col = 0
+while col < C:
+    row = 0
+    total = 0
+
+    while row < R:
+        total += mat[row][col]
+        row += 1
+
+    sun_c.append(total)
+    col += 1
+
+print(*sun_r)
+print(*sun_c)
+Q3
+1 / 1 pts
+Correct
+Transpose of Matrix
+Your Answer
+
+python
+# Write your reference solution here
+# Write your reference solution here
+R, C = map(int, input().split())
+mat = [ ]
+i = 0
+while i < R :
+        row = list(map(int,input().split()))
+        mat.append(row)
+        i += 1
+
+col = 0 
+while col < C :
+        row = 0 
+        while row < R :
+                if row == R -1 :
+                        print(mat[row][col])
+                else:
+                        print(mat[row][col] , end = " ")
+                row += 1 
+        
+        col += 1 
+
+Q4
+1 / 1 pts
+Correct
+Diagonal Sums
+Your Answer
+
+python
+# Write your reference solution here
+# Write your reference solution here
+R = int(input())
+mat = []
+i = 0 
+while i < R :
+        l = list(map(int,input().split()))
+        mat.append(l)
+        i+=1
+
+# print(mat)
+
+sum_main = 0
+sum_anti = 0
+
+i = 0
+while i < R :
+        sum_main += mat[i][i]
+        i+= 1 
+# print(sum_main)
+
+row = 0
+coll = (R-1)
+while row < R:
+        sum_anti += mat[row][coll]
+        row += 1
+        coll -= 1
+
+print(sum_main,sum_anti)
+
+
+Practice Assignment- 19
+
+Q1
+1 / 1 pts
+Correct
+Max Number Grid
+Your Answer
+
+python
+n = int(input())
+
+i = 1
+while i <= n :
+    j = 1 
+    while j <= n :
+        if j ==n :
+            print(max(i,j))
+        else:
+            print(max(i,j), end = " ")
+        j+=1
+    i+=1
+Q2
+1 / 1 pts
+Correct
+Checkerboard
+Your Answer
+
+python
+R, C = map(int, input().split())
+
+i = 0
+while i < R:
+    j = 0
+    while j < C:
+        if (i + j) % 2 == 0:
+            print("#", end="")
+        else:
+            print(".", end="")
+        j += 1
+    print()
+    i += 1
+Q3
+1 / 1 pts
+Correct
+Binary Triangle
+Your Answer
+
+python
+n = int(input())
+
+i = 1
+while i <= n:
+    j = 1
+    while j <= i:
+        if (i + j) % 2 == 0:
+            print(1, end="")
+        else:
+            print(0, end="")
+            
+        if j < i:
+            print(" ", end="")
+        j += 1
+
+    print()
+    i += 1
+Q4
+1 / 1 pts
+Correct
+Pascal's Triangle
+Your Answer
+
+python
+# Write your reference solution here
+# Write your reference solution here
+import math 
+n = int(input())
+i = 0
+
+while i < n :
+        j = 0
+        while j <= i :
+                cobi = round(math.factorial(i)/(math.factorial(j)*math.factorial(i -j)))
+                if i == j :
+                        print(cobi)
+                else :
+                        print(cobi, end = " ")
+                j += 1
+        # print()
+        i += 1 
+
+P17
+
+
+Q1
+1 / 1 pts
+Correct
+Pascal's Triangle
+Your Answer
+
+python
+# Write your reference solution here
+import math 
+n = int(input())
+i = 0
+
+while i < n :
+        j = 0
+        while j <= i :
+                cobi = round(math.factorial(i)/(math.factorial(j)*math.factorial(i -j)))
+                if i == j :
+                        print(cobi)
+                else :
+                        print(cobi, end = " ")
+                j += 1
+        # print()
+        i += 1 
+
+
+Q2
+1 / 1 pts
+Correct
+Pairs With Divisible Product
+Your Answer
+
+python
+# Write your reference solution here
+n , k = map(int, input().split())
+count = 0 
+i  = 1
+
+while i <= n :
+    j = i + 1
+    while j <= n :
+        product = i * j 
+        if product % k == 0 :
+            count += 1 
+        j+= 1 
+    i+=1 
+print(count)
+Q3
+1 / 1 pts
+Correct
+Multiplication Table Grid
+Your Answer
+
+python
+# Write your reference solution here
+R,C = map(int , input().split())
+i = 1
+while i <= R :
+        j = 1
+        while j <= C :
+                if j < C :
+                        print(i*j , end= " ")
+                elif j == C :
+                        print(i*j , end= "")
+
+                j += 1 
+        i += 1 
+        print()
+Q4
+1 / 1 pts
+Correct
+Hollow Square
+Your Answer
+
+python
+n = int(input())
+
+i = 1
+while i <= n:
+    j = 1
+
+    while j <= n:
+        if i == 1 or i == n or j == 1 or j == n:
+            print("*", end="")
+        else:
+            print(" ", end="")
+
+        j += 1
+
+    print()
+    i += 1
+
+Back to assignments
+Practice Assignment-16
+Graded · Attempt #1 · 29 Oct 2026, 12:24 am IST
+
+Score
+
+6
+/ 6
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+GCD of Two Numbers
+Your Answer
+
+python
+# Write your reference solution here
+a,b = map(int , input().split())
+while b != 0 :
+    r = a % b
+    a = b
+    b= r
+print(a)
+Q2
+1 / 1 pts
+Correct
+Longest Word in a Sentence
+Your Answer
+
+python
+# Write your reference solution here
+a = input().split()
+i = 1
+max_word = a[0]
+while i < len(a):
+    if len(a[i]) > len(max_word) :
+        max_word = a[i]
+    i += 1
+print(max_word)
+    
+Q3
+1 / 1 pts
+Correct
+FizzBuzz Range
+Your Answer
+
+python
+
+# Write your reference solution here
+a , b = map(int, input().split())
+i= a
+while   i  <= b :
+        if i%3 ==0 and i%5==0 :
+                print("FizzBuzz")
+        elif i%3 ==0 :
+                print("Fizz")
+        elif i%5==0:
+                print("Buzz")
+        else :
+                print(i)
+        i += 1 
+Q4
+1 / 1 pts
+Correct
+Palindrome Checker II
+Your Answer
+
+python
+# Write your reference solution here
+
+
+x = str(input())
+x = x.replace(" ","").lower()
+if x == x[::-1] :
+    print("Palindrome")
+else :
+    print('Not Palindrome')
+Q5
+1 / 1 pts
+Correct
+Prime or Not
+Your Answer
+
+python
+
+num = int(input())
+i = 1
+count = 0
+while i <=  num:
+    if num %i == 0:
+        count +=1
+    i+=1
+if count == 2:
+    print("prime")
+else :
+    print("not prime")
+
+Q6
+1 / 1 pts
+Correct
+Factorial
+Your Answer
+
+python
+n = int(input())
+
+# ── Write your solution here ──
+i = 1
+factorial = 1
+while i <= n :
+        factorial = factorial *i
+        i += 1
+print(factorial)
+
+
+Practice Assessment - 15
+Graded · Attempt #1 · 22 Oct 2026, 02:07 am IST
+
+Score
+
+5
+/ 5
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+Candy Jar
+Your Answer
+
+python
+candies = int(input())
+
+k = 1
+children = 0
+
+while candies > 0:
+    children += 1
+
+    if candies >= k:
+        last_got = k
+        candies = candies - k
+
+        if candies == 0:
+            full_share = "Yes"
+
+    else:
+        last_got = candies
+        candies = 0
+        full_share = "No"
+
+    k += 1
+
+print(f"Children: {children}, Last child got: {last_got}, Full share: {full_share}")
+Q2
+1 / 1 pts
+Correct
+Bus Ticket Counter
+Your Answer
+
+python
+# Write your reference solution here
+pessanger = list(map(int , input().split()))
+i =1
+freeP= 0 
+totalf = 0
+
+while i < len(pessanger):
+    if  pessanger[i] <=4 :
+        freeP += 1 
+    elif pessanger[i] <= 12 :
+        totalf += 10
+    elif pessanger[i] <=  59 :
+        totalf += 25
+    elif pessanger[i] <= 79 :
+        totalf += 15
+    else :
+        freeP += 1
+    i+=1
+
+print(f"Total fare: {totalf}, Free passengers: {freeP}")
+Q3
+1 / 1 pts
+Correct
+Digit Detective
+Your Answer
+
+python
+# Write your reference solution here
+n = int(input())
+zero = 0
+even = 0
+odd = 0
+if n == 0:
+    zero = 1 
+
+while n > 0 :
+    digit = n%10 
+    if digit == 0 :
+        zero += 1 
+    elif n% 2 == 0 :
+        even += 1 
+    else :
+         odd += 1 
+    n = n//10
+print(f"Even: {even}, Odd: {odd}, Zero: {zero}")
+Q4
+1 / 1 pts
+Correct
+Magic Number Shrinker
+Your Answer
+
+python
+# Write your reference solution here
+n = int(input())
+steps = 0 
+
+while n >= 10 :
+    old = n 
+    digit_sum = 0 
+    while n > 0 : 
+        digit = n%10 
+        digit_sum = digit_sum + digit
+        n = n//10
+
+    print(f"{old} -> {digit_sum}")
+    n = digit_sum
+    steps += 1
+
+print(f"Single digit: {n}")
+print(f"Steps: {steps}")
+Q5
+1 / 1 pts
+Correct
+ATM Session
+Your Answer
+
+python
+balance = int(input())
+
+declined = 0
+blocked = False
+
+while True:
+    transaction = int(input())
+
+    if transaction == 0:
+        break
+
+    if transaction > 0:
+        balance = balance + transaction
+
+    else:
+        amount = -transaction
+
+        if balance >= amount:
+            balance = balance - amount
+        else:
+            declined = declined + 1
+
+            if declined == 3:
+                blocked = True
+                break
+
+print(f"Final balance: {balance}")
+print(f"Declined withdrawals: {declined}")
+
+if blocked:
+    print("Card blocked")
+else:
+    print("Session closed")
+
+Practice Assessment - 14
+Graded · Attempt #1 · 08 Oct 2026, 10:33 pm IST
+
+Score
+
+5
+/ 5
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+Sum and Average of N Numbers
+Your Answer
+
+python
+n = int(input())
+
+if n == 0:
+    print("Sum: 0")
+    print("Average: 0.00")
+else:
+    nums = list(map(int, input().split()))
+    total = sum(nums)
+
+    print(f"Sum: {total}")
+    print(f"Average: {total / n:.2f}")
+Q2
+1 / 1 pts
+Correct
+Coordinate Deduplicator
+Your Answer
+
+python
+# Write your reference solution here
+n = int(input())
+unique_cordi = set()
+for _ in range(n):
+    x,y = map(int , input().split())
+    unique_cordi.add((x,y))
+
+print(len(unique_cordi))
+for x in sorted(unique_cordi):
+    print(*x,sep = " ")
+Q3
+1 / 1 pts
+Correct
+Banned Username Checker
+Your Answer
+
+python
+n = int(input())
+
+banned = set(input().split())
+
+q = int(input())
+
+users = input().split()
+
+for user in users:
+    if user in banned:
+        print("BANNED")
+    else:
+        print("OK")
+Q4
+1 / 1 pts
+Correct
+Longest Word in a Sentence
+Your Answer
+
+python
+x = input().split()
+i=0
+ster1 = ""
+c=0
+
+while i < len(x):
+    if len(x[i])>c :
+        c=len(x[i])
+        ster1 = x[i]
+    i += 1
+        
+print(ster1)
+Q5
+1 / 1 pts
+Correct
+Binary to Decimal Round Trip
+Your Answer
+
+python
+# Write your reference solution here
+binary = input()
+integer = int(binary,2)
+print (integer)
+
+
+
+Practice Assessment - 13
+Graded · Attempt #1 · 07 Oct 2026, 11:41 pm IST
+
+Score
+
+2
+/ 2
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+The QuizNest Exam Review
+Your Answer
+
+python
+# Write your reference solution here
+ADMIN_BIT = 0b100   # permission: admin (bit 2)
+GRADER_BIT = 0b010  # permission: grader (bit 1)
+VIEWER_BIT = 0b001  # permission: viewer (bit 0)
+PASS_MARK = 40
+ 
+ 
+def review_submissions(submissions, staff_flags):
+    """
+    submissions: list of dicts - each has 'student_id' (str), 'score' (int),
+                 'minutes' (int)
+    staff_flags: int, bit-encoded permissions of the staff member
+    Returns    : set of student IDs flagged for manual review
+    """
+    if not submissions:
+        print("No submissions to review")
+        return set()
+ 
+    needed = ADMIN_BIT | GRADER_BIT
+    if (staff_flags & needed) == needed:
+        print("Full report access granted")
+    else:
+        print("Limited access - summary only")
+ 
+    flagged = set()
+    unique_students = set()
+    total_minutes = 0
+    scores = []
+ 
+    for s in submissions:
+        sid = s["student_id"].strip().upper()
+        unique_students.add(sid)
+        scores.append(s["score"])
+        total_minutes += s["minutes"]
+ 
+        if s["score"] < PASS_MARK:
+            flagged.add(sid)
+ 
+        if s["score"] == 100 and s["minutes"] < 5:
+            flagged.add(sid)
+ 
+    print("Unique students:", len(unique_students))
+ 
+    hours, mins = total_minutes // 60, total_minutes % 60
+    print(f"Total exam time: {hours} h {mins} min")
+ 
+    ranked = sorted(scores, reverse=True)
+    top3 = ranked[:3]
+    print("Top 3 scores:", top3)
+ 
+    print("Flagged students:", sorted(flagged))
+    return flagged
+
+# ---------------- Input / output (do not change) ----------------
+import json
+data = json.loads(input())
+result = review_submissions(data["submissions"], data["staff_flags"])
+print("Returned:", sorted(result))
+Q2
+1 / 1 pts
+Correct
+The FitPulse Check-in Audit
+Your Answer
+
+python
+MANAGER_BIT = 0b100     # permission: manager (bit 2)
+TRAINER_BIT = 0b010     # permission: trainer (bit 1)
+FRONT_DESK_BIT = 0b001  # permission: front desk (bit 0)
+MAX_MINUTES = 120
+ 
+ 
+def audit_checkins(checkins, staff_flags):
+    """
+    checkins   : list of dicts - each has 'member_id' (str), 'minutes' (int),
+                 'fee' (float), 'guest' (bool)
+    staff_flags: int, bit-encoded permissions of the staff member
+    Returns    : set of member IDs flagged for manual review
+    """
+    if not checkins:
+        print("No check-ins to audit")
+        return set()
+ 
+    # 1. Full report is only for staff who are BOTH manager and trainer
+    needed = MANAGER_BIT | TRAINER_BIT
+    if (staff_flags & needed) == needed:
+        print("Full report access granted")
+    else:
+        print("Limited access - summary only")
+ 
+    flagged = set()
+ 
+    # 2. Flag sessions of 120 minutes or more
+    for c in checkins:
+        if c["minutes"] >= MAX_MINUTES:
+            flagged.add(c["member_id"])
+ 
+    # 3. Flag invalid records: negative minutes OR negative fee
+    for c in checkins:
+        if c["minutes"] < 0 or c["fee"] < 0:
+            flagged.add(c["member_id"])
+ 
+    # 4. Flag free check-ins made by members (not guests)
+    for c in checkins:
+        if c["fee"] == 0 and not c["guest"]:
+            flagged.add(c["member_id"])
+ 
+    # 5. Percentage of guest check-ins
+    guest_count = sum(1 for c in checkins if c["guest"])
+    guest_pct = guest_count / len(checkins) * 100
+    print(f"Guest check-ins: {guest_pct:.1f}%")
+ 
+    # 6. Show the most recent check-in (last record in the list)
+    last = checkins[-1]
+    print("Last check-in:", last["member_id"])
+ 
+    print("Flagged members:", sorted(flagged))
+    return flagged
+ 
+ 
+# ---------------- Input / output (do not change) ----------------
+import json
+ 
+data = json.loads(input())
+result = audit_checkins(data["checkins"], data["staff_flags"])
+print("Returned:", sorted(result))
+
+
+
+Practice Assessment - 12
+Graded · Attempt #1 · 04 Oct 2026, 07:14 pm IST
+
+Score
+
+4
+/ 4
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+Flight Upgrade Eligibility Checker
+Your Answer
+
+python
+member, miles = map(int, input().split())
+
+if member == 1:
+    if miles >= 100000:
+        print("Eligible: Platinum Upgrade")
+    elif miles >= 50000:
+        print("Eligible: Gold Upgrade")
+    else:
+        print("Not Eligible: Insufficient Miles")
+else:
+    if miles >= 100000:
+        print("Eligible: Standard Upgrade Offer")
+    else:
+        print("Not Eligible: Join Membership Program")
+Explanation
+
+The outer if / else splits the problem in two completely separate worlds: members and non-members. Once
+you're inside one of those branches, you only ever think about that branch's own rules -- a member's
+50,000-mile threshold has nothing to do with a non-member's 100,000-mile threshold, so they can't be checked
+with a single flat elif chain. Inside the member branch, an elif chain checks miles from the highest tier down (>= 100000 first, then >= 50000), falling through to "Not Eligible" only if neither matches. Inside the non-member branch, the same
+top-down idea applies but with just one threshold to check.
+
+Q2
+1 / 1 pts
+Correct
+Palindrome Checker II
+Your Answer
+
+python
+
+
+x = str(input())
+x = x.replace(" ","").lower()
+if x == x[::-1] :
+    print("Palindrome")
+else :
+    print('Not Palindrome')
+Q3
+1 / 1 pts
+Correct
+Login Eligibility Checker
+Your Answer
+
+python
+# Write your reference solution here
+# Write your reference solution here
+age , has_id,is_banned = map(int,input().split())
+if age >= 18 and has_id == 1 and is_banned == 0 :
+        print("Allowed")
+else:
+        print("Denied")
+Q4
+1 / 1 pts
+Correct
+The sort() Trap
+Your Answer
+
+python
+# Write your reference solution here
+# Write your reference solution here
+num = list(map(int,input().split()))
+nums = sorted(num)
+print(num)
+print(nums)
+
+Practice Assessment - 11
+Graded · Attempt #1 · 29 Sept 2026, 11:30 pm IST
+
+Score
+
+6
+/ 6
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+Triangle Type Classifier
+Your Answer
+
+python
+# Write your reference solution here
+S1,S2,S3 = map(int,input().split())
+if S1 + S2 > S3 :
+    if S1 ==S2==S3 :
+        print("Equilateral")
+    elif S1==S2 or S2==S3 or S1==S3 :
+        print("Isosceles")
+    else :
+        print("Scalene")
+else:
+    print("Not a Triangle")
+Q2
+1 / 1 pts
+Correct
+Traffic Signal Action
+Your Answer
+
+python
+# Write your reference solution here
+a = str(input())
+if  a in ["red","yellow","green"]:
+    if a =="red":
+        print("Stop")
+    elif a=="green":
+        print("Go")
+    elif a=="yellow":
+        print("Slow Down")
+else :
+    print("Unknown Signal")
+Q3
+1 / 1 pts
+Correct
+Number Sign Classifier
+Your Answer
+
+python
+# Write your reference solution here
+x = int(input())
+if (x>0) :
+    print("Positive")
+elif (x==0) :
+    print("Zero")
+elif( x<0) :
+    print("Negative")
+Q4
+1 / 1 pts
+Correct
+Even or Odd Checker
+Your Answer
+
+python
+# Write your reference solution here
+x = int(input())
+if x%2==0 :
+    print("Even")
+else:
+    print("Odd")
+Q5
+1 / 1 pts
+Correct
+Power-of-Two Checker
+Your Answer
+
+python
+# Write your reference solution here
+n =int(input())
+if n>0 and ( n &(n-1))==0 :
+    print("Yes")
+else:
+    print("No")
+Q6
+1 / 1 pts
+Correct
+Temperature Range Classifier
+Your Answer
+
+python
+# Write your reference solution here
+x = int(input())
+if   x<0 :
+    print("Freezing")
+elif   0<=x<15 : 
+    print("Cold")
+elif 15 <=x<25 :
+    print("Mild")
+elif 25 <=x<35:
+    print("Hot")
+else:
+    print("Extreme Heat")
+
+
+actice Assessment - 10
+Graded · Attempt #1 · 27 Sept 2026, 05:08 pm IST
+
+Score
+
+32
+/ 42
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+2 / 2 pts
+Correct
+A developer writes colors = {"red", "green", "blue"} and then runs print(colors[0]) expecting to see the first color. What actually happens?
+Your Answer
+
+
+A
+Prints "red"
+
+B
+Prints a random element from the set
+
+Raises TypeError: 'set' object is not subscriptable
+Correct answer
+Your answer
+
+D
+Raises IndexError: set index out of range
+Explanation
+
+Sets are unordered and don't track positions, so Python doesn't support indexing on them at all -- it raises TypeError rather than guessing an element.
+
+Q2
+0 / 2 pts
+Incorrect
+What does type({}) return in Python?
+Your Answer
+
+
+A
+<class 'set'>
+
+<class 'dict'>
+Correct answer
+
+<class 'NoneType'>
+Your answer
+
+D
+<class 'list'>
+Explanation
+
+{} is the literal syntax for an empty dictionary, not an empty set -- this is a classic Python footgun.
+
+Q3
+2 / 2 pts
+Correct
+In Java, int[] arr = {1, "two", 3}; fails to compile. In Python, mixed = [1, "two", 3] works fine. Why?
+Your Answer
+
+
+A
+Python arrays silently convert every element to a string
+
+Python lists are heterogeneous -- they don't require every element to share one type, unlike Java/C++ arrays
+Correct answer
+Your answer
+
+C
+Python secretly stores every element as the same hidden type
+
+D
+Java arrays are actually more flexible than Python lists
+Explanation
+
+Python lists can freely mix types in one list (heterogeneous); Java/C++ arrays require every element to share the same declared type (homogeneous).
+
+Q4
+2 / 2 pts
+Correct
+An article-tagging system stores each article's tags as a set inside a list: article_tags = [{"Python","AI"}, {"Python","Web"}]. Why is a set the right choice for each article's tags, rather than a list of tags?
+Your Answer
+
+
+A
+Sets preserve the order tags were added in, which matters for display
+
+A set automatically prevents the same tag being added twice, and makes "does this article have tag X?" fast to check
+Correct answer
+Your answer
+
+C
+Sets take less memory than lists no matter what they store
+
+D
+Lists cannot hold strings, only sets can
+Explanation
+
+Tags naturally shouldn't repeat, and membership checks ("does this article have tag X?") are common -- exactly what sets are built for.
+
+Q5
+2 / 2 pts
+Correct
+A list data = [10, "20", 30] is meant to store three numbers for a total, but one value is accidentally a string. What happens when the program later runs sum(data)?
+Your Answer
+
+
+A
+Python auto-converts "20" to the number 20
+
+TypeError, because Python won't silently add an int and a str together
+Correct answer
+Your answer
+
+C
+The string is skipped and sum() ignores it
+
+D
+sum() returns "102030" as one concatenated string
+Explanation
+
+Python's flexibility in mixing types in a list is powerful but risky -- an operation like sum() will crash with a TypeError the moment it hits an incompatible type.
+
+Q6
+0 / 2 pts
+Incorrect
+What type does "a" in "cat" return?
+Your Answer
+
+
+str
+Your answer
+
+B
+int
+
+bool
+Correct answer
+
+D
+None
+Explanation
+
+The in operator always returns a bool (True or False), regardless of which container type it's used on.
+
+Q7
+2 / 2 pts
+Correct
+Given prices = [499, 999, 1499], what happens when you run prices[1] = 899?
+Your Answer
+
+
+A
+Raises TypeError, since lists are immutable
+
+Works fine -- lists are mutable, so index 1 is updated to 899
+Correct answer
+Your answer
+
+C
+Raises IndexError
+
+D
+Creates a brand-new list, leaving the original list unchanged
+Explanation
+
+Unlike strings, lists are mutable -- individual elements can be changed in place by index.
+
+Q8
+2 / 2 pts
+Correct
+A leaderboard stores the top 10 scores in ranked order, and rank #3 sometimes needs correcting after a review. Which container fits best?
+Your Answer
+
+
+A
+set, because scores shouldn't repeat
+
+list, because order matters and an element needs to be updated by position
+Correct answer
+Your answer
+
+C
+str, because scores can just be joined as text
+
+D
+Doesn't matter, all three behave the same way here
+Explanation
+
+This needs both order (ranking) and mutation by position (correcting rank #3) -- exactly what a list provides.
+
+Q9
+2 / 2 pts
+Correct
+Evaluate: "gram" in "Programming"
+Your Answer
+
+
+True, because "gram" appears as a substring of "Programming"
+Correct answer
+Your answer
+
+B
+False, because in on strings only checks single characters
+
+C
+Raises TypeError, since "gram" has more than one character
+
+D
+True only if the case matches exactly starting at position 0
+Explanation
+
+On strings, in checks for a substring -- it can be one character or many -- not just membership of a single character.
+
+Q10
+2 / 2 pts
+Correct
+Which of these correctly creates an empty set?
+Your Answer
+
+
+A
+s = {}
+
+s = set()
+Correct answer
+Your answer
+
+C
+s = []
+
+D
+s = ()
+Explanation
+
+Since {} means an empty dict, the only way to create an empty set is the set() constructor.
+
+Q11
+2 / 2 pts
+Correct
+A system needs to track which of 5 million user IDs have already redeemed a coupon, only ever asking "has this ID redeemed yet?". Which container fits best?
+Your Answer
+
+
+A
+list, because it preserves the order IDs redeemed in
+
+set, because only membership matters and lookups need to be fast
+Correct answer
+Your answer
+
+C
+str, because IDs are just text
+
+D
+tuple, because IDs never change
+Explanation
+
+Order doesn't matter here -- only fast membership checks do -- which is exactly what a set is optimized for.
+
+Q12
+0 / 2 pts
+Incorrect
+A robot's visited grid positions are stored as visited = {(0,0), (1,1), (0,0), (2,3)}. What is len(visited), and why does this work when a set of lists wouldn't?
+Your Answer
+
+
+A
+len is 4; tuples and lists both work fine as set elements
+
+len is 3; tuples are hashable (immutable), so they can be set elements, unlike lists
+Correct answer
+
+len is 4; sets never deduplicate tuples
+Your answer
+
+D
+This raises a TypeError, since tuples can't be compared for equality
+Explanation
+
+(0,0) is repeated and gets deduplicated, leaving 3 unique tuples. Tuples are immutable and therefore hashable, so they're valid set elements -- lists are not.
+
+Q13
+2 / 2 pts
+Correct
+A student runs: label = "Sale" then label[0] = "s". What happens?
+Your Answer
+
+
+A
+label becomes "sale"
+
+TypeError: 'str' object does not support item assignment
+Correct answer
+Your answer
+
+C
+label becomes "Sale " with a trailing space
+
+D
+No error, but label is left unchanged
+Explanation
+
+Strings are immutable in Python -- their characters can never be changed in place after creation, so item assignment raises TypeError.
+
+Q14
+2 / 2 pts
+Correct
+What is the result of print([7, 3, 7, 5, 3, 3])?
+Your Answer
+
+
+A
+[7, 3, 5] -- duplicates removed automatically
+
+[7, 3, 7, 5, 3, 3] -- unchanged, since lists keep every element including duplicates
+Correct answer
+Your answer
+
+C
+Raises TypeError, since lists can't hold duplicate values
+
+D
+{7, 3, 5} -- Python silently converts it to a set
+Explanation
+
+Lists, unlike sets, keep every element exactly as given -- including repeated values, in the order they appear.
+
+Q15
+2 / 2 pts
+Correct
+A junior developer says: "Lists and sets both let me loop through elements, so they're basically the same for storing data." What key idea about "ordered" are they missing?
+Your Answer
+
+
+A
+Ordered containers store items alphabetically; unordered containers don't
+
+Ordered containers remember each item's position, so element[i] is meaningful; unordered containers only track membership, not position
+Correct answer
+Your answer
+
+C
+Ordered containers are always faster to search than unordered containers
+
+D
+There is no real difference -- both preserve insertion order in modern Python
+Explanation
+
+Ordered means Python keeps track of each element's position, so you can ask 'what's at position 2?'. Unordered means Python only tracks whether an item is present, not where.
+
+Q16
+2 / 2 pts
+Correct
+Given grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]], what does grid[2][0] return?
+Your Answer
+
+
+A
+3
+
+7
+Correct answer
+Your answer
+
+C
+9
+
+D
+1
+Explanation
+
+grid[2] selects the third row, [7, 8, 9]; then [0] takes its first element: 7.
+
+Q17
+2 / 2 pts
+Correct
+You need to check membership of an ID against 2 million stored IDs, many times per second. Which container gives the fastest average-case lookup?
+Your Answer
+
+
+A
+list
+
+B
+str
+
+set
+Correct answer
+Your answer
+
+D
+All three perform identically
+Explanation
+
+Sets use hashing internally, giving roughly O(1) average-case membership checks, while lists require scanning up to every element -- O(n).
+
+Q18
+2 / 2 pts
+Correct
+coords = (10, 20) is a tuple, so hash(coords) works fine. But bad = (10, [20, 30]) is also a tuple. What happens when you run hash(bad)?
+Your Answer
+
+
+A
+Works fine -- tuples are always hashable
+
+TypeError: unhashable type: 'list', because one of the tuple's elements is a mutable list
+Correct answer
+Your answer
+
+C
+Returns 0, since the tuple contains a nested container
+
+D
+Works, but returns a different hash value every time the program runs
+Explanation
+
+A tuple is only hashable if every element inside it is also hashable. Nesting a mutable list inside an otherwise-immutable tuple breaks that guarantee.
+
+Q19
+0 / 2 pts
+Incorrect
+Which of these add() calls on s = {1, 2, 3} will crash with a TypeError?
+Your Answer
+
+
+A
+s.add(100)
+
+B
+s.add("hello")
+
+s.add((4, 5))
+Your answer
+
+s.add([4, 5])
+Correct answer
+Explanation
+
+Lists are mutable, and mutable built-in types are not hashable -- sets require every element to be hashable, so adding a list crashes.
+
+Q20
+2 / 2 pts
+Correct
+What is the result of print({7, 3, 7, 5, 3, 3})?
+Your Answer
+
+
+A
+{7, 3, 7, 5, 3, 3} -- unchanged, exactly as typed
+
+A set containing 7, 3, and 5 exactly once each (display order may vary)
+Correct answer
+Your answer
+
+C
+Raises TypeError, since a set literal can't contain duplicates
+
+D
+[7, 3, 5] -- Python silently converts it to a list
+Explanation
+
+A set automatically discards duplicate values as soon as it's built, keeping only one copy of each unique element.
+
+Q21
+0 / 1 pts
+Incorrect
+Clean Product Code
+Your Answer
+
+python
+# Write your reference solution here
+line = input()
+fields =line.split(",")
+sku = fields[0].strip()
+product_name  = fields[1].sprit()
+print(sku)
+print(product_name )
+Q22
+0 / 1 pts
+Team Overlap Report
+Your Answer
+
+(no code submitted)
+
+Practice Assignment - 9
+Graded · Attempt #1 · 23 Sept 2026, 10:01 pm IST
+
+Score
+
+3
+/ 3
+
+Overall Feedback
+
+No overall feedback was left.
+
+Your Answers
+Q1
+1 / 1 pts
+Correct
+Reversed Copy, Different Box
+Your Answer
+
+python
+original = input()
+
+reversed_copy = original[::-1]
+
+print(f"Length: {len(original)}")
+print(f"Reversed: {reversed_copy}")
+print(f"Same object as original: {id(original) == id(reversed_copy)}")
+Q2
+1 / 1 pts
+Correct
+Username Length Meter
+Your Answer
+
+python
+username = input()
+
+print(f"Length: {len(username)}")
+print(f"Meter: {'#' * len(username)}")
+Q3
+1 / 1 pts
+Correct
+Student Record
+Your Answer
+
+python
+# Write your reference solution here
+name, s1, s2, s3 = input().split()
+
+student = (name, int(s1), int(s2), int(s3))
+
+avg = (student[1] + student[2] + student[3]) / 3
+
+print(f"{student[0]} {avg:.2f}")
+
+
